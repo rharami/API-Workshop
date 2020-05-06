@@ -16,6 +16,7 @@ def main():
 	influx_org_id =''
 	influx_url = ''
 	influx_token = ''
+	influx_bucket_name = ''
 
 	#initialize API key and controllers and monro specific variables
 	dashboard = meraki.DashboardAPI(api_key = api_key, output_log= False)
@@ -133,7 +134,7 @@ def main():
 			data_to_db.append(f'{net_name} lastchange="{output_time} - {last_change_name}"')
 
 		#write the data we have gathered to the database
-		write_api.write("meraki", influx_org_id, data_to_db)
+		write_api.write(influx_bucket_name, influx_org_id, data_to_db)
 		
 		#wait 15 seconds before gathering the next set of data
 		time.sleep(15)
