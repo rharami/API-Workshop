@@ -18,7 +18,7 @@ def main():
 	influx_token = ''
 	influx_bucket_name = ''
 
-	#initialize API key and controllers and monro specific variables
+	#initialize API keys for meraki and influx
 	dashboard = meraki.DashboardAPI(api_key = api_key, output_log= False)
 	client = InfluxDBClient(url = influx_url, token = influx_token)
 	write_api = client.write_api()

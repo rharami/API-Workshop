@@ -1,5 +1,4 @@
 FROM ubuntu
-MAINTAINER RyanHarami rharami@gmail.com
 RUN apt-get update
 RUN DEBIAN_FRONTEND='noninteractive' apt-get install -y \
 	build-essential \
